@@ -1,0 +1,10 @@
+# Ubuntu temporary files
+*.*~
+*~
+
+# Eclipse
+.project
+.settings
+
+# Specific locations
+*.log
