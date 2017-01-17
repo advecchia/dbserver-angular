@@ -8,3 +8,6 @@
 
 # Specific locations
 *.log
+
+# node and npm
+node_modules

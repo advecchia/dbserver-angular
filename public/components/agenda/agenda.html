@@ -1,0 +1,43 @@
+<div layout="row" ng-cloak>
+  <div class='agenda' layout='column'>
+    <div class="header">
+      <i class="fa fa-angle-left" ng-click="ac.previousMonth()"></i>
+      <span>{{ac.showCurrentCalendarMonth()}}</span>, <span>{{ac.showCurrentCalendarYear()}}</span>
+      <i class="fa fa-angle-right" ng-click="ac.nextMonth()"></i>
+    </div>
+    <div class="week names" layout="row">
+      <span class="day" ng-repeat='weekDay in ac.weekDays'>{{weekDay.acronym}}</span>
+    </div>
+    <div class="week" ng-repeat="week in ac.getCurrentCalendarMonthWeekDays()" layout="row">
+      <span class="day" ng-repeat="dayWeek in week track by $index">{{dayWeek}}</span>
+      <!--  ng-click="ac.select(day)" ng-class="{ today: isToday, 'different-month': !isCurrentMonth, selected: isSame(selected) }"  -->
+    </div>
+  </div>
+  <div class='agenda-changes' ng-bind='ac.out'>lallala</div>
+</div>
+
+  <div id='agenda'>
+    <a href class='agenda-create' ng-click='ac.agendaCreate()'>Create</a>
+    <a href class='agenda-update' ng-click='ac.agendaUpdate()'>Update</a>
+    <a href class='agenda-remove' ng-click='ac.agendaRemove()'>Remove</a>
+    <a href class='agenda-view' ng-click='ac.agendaView()'>View</a>
+    <a href class='agenda-view-details' ng-click='ac.agendaViewDetails()'>View Details</a>
+    <a href class='agenda-count' ng-click='ac.agendaCount()'>Count</a>
+    <span ng-bind='ac.out'></span>
+  </div>
+  <md-content layout-padding>
+    <div layout-gt-xs="row">
+      <form name="agendaForm" flex-gt-xs>
+        <md-input-container>
+          <label>Begin Date</label>
+          <md-datepicker name="beginDateField" ng-model="date" md-placeholder="Begin date"
+              required></md-datepicker>
+
+          <div class="validation-messages" ng-messages="agendaForm.beginDateField.$error">
+            <div ng-message="valid">The entered value is not a date!</div>
+            <div ng-message="required">This date is required!</div>
+          </div>
+        </md-input-container>
+      </form>
+    </div>
+  </md-content>

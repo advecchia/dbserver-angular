@@ -1,0 +1,203 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Pedro",
+      "createdOn": ""
+    },
+    {
+      "id": 2,
+      "name": "Maria",
+      "createdOn": ""
+    },
+    {
+      "id": 3,
+      "name": "João",
+      "createdOn": ""
+    },
+    {
+      "id": 4,
+      "name": "Ana",
+      "createdOn": ""
+    },
+    {
+      "id": 5,
+      "name": "Marcela",
+      "createdOn": ""
+    },
+    {
+      "name": "Test",
+      "createdOn": "2017-01-16T13:50:10.155Z",
+      "id": 6
+    },
+    {
+      "name": "Felipe",
+      "createdOn": "2017-01-16T17:55:13.387Z",
+      "id": 7
+    },
+    {
+      "createdOn": "2017-01-16T19:41:45.357Z",
+      "id": 8
+    },
+    {
+      "name": "sadasdasd",
+      "createdOn": "2017-01-16T19:42:03.521Z",
+      "id": 9
+    },
+    {
+      "createdOn": "2017-01-16T19:47:33.793Z",
+      "id": 10
+    },
+    {
+      "createdOn": "2017-01-16T19:49:42.369Z",
+      "id": 11
+    },
+    {
+      "name": "mmkmkm",
+      "createdOn": "2017-01-16T19:57:54.029Z",
+      "id": 12
+    },
+    {
+      "name": "sadasdasd",
+      "createdOn": "2017-01-16T20:09:05.101Z",
+      "id": 13
+    }
+  ],
+  "appointments": [
+    {
+      "id": 1,
+      "userId": 1,
+      "title": "My appointment",
+      "begin": "",
+      "end": "",
+      "details": "Any details.",
+      "changedOn": ""
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "title": "My appointment",
+      "begin": "",
+      "end": "",
+      "details": "Any details.",
+      "changedOn": ""
+    },
+    {
+      "id": 3,
+      "userId": 3,
+      "title": "My appointment",
+      "begin": "",
+      "end": "",
+      "details": "Any details.",
+      "changedOn": ""
+    },
+    {
+      "id": 4,
+      "userId": 4,
+      "title": "My appointment",
+      "begin": "",
+      "end": "",
+      "details": "Any details.",
+      "changedOn": ""
+    },
+    {
+      "id": 5,
+      "userId": 5,
+      "title": "My appointment",
+      "begin": "",
+      "end": "",
+      "details": "Any details.",
+      "changedOn": ""
+    },
+    {
+      "id": 6,
+      "userId": 1,
+      "title": "My appointment",
+      "begin": "",
+      "end": "",
+      "details": "Any details.",
+      "changedOn": ""
+    },
+    {
+      "id": 7,
+      "userId": 2,
+      "title": "My appointment",
+      "begin": "",
+      "end": "",
+      "details": "Any details.",
+      "changedOn": ""
+    },
+    {
+      "id": 8,
+      "userId": 3,
+      "title": "My appointment",
+      "begin": "",
+      "end": "",
+      "details": "Any details.",
+      "changedOn": ""
+    },
+    {
+      "id": 9,
+      "userId": 4,
+      "title": "My appointment",
+      "begin": "",
+      "end": "",
+      "details": "Any details.",
+      "changedOn": ""
+    },
+    {
+      "id": 10,
+      "userId": 5,
+      "title": "My appointment",
+      "begin": "",
+      "end": "",
+      "details": "Any details.",
+      "changedOn": ""
+    },
+    {
+      "id": 11,
+      "userId": 1,
+      "title": "My appointment",
+      "begin": "",
+      "end": "",
+      "details": "Any details.",
+      "changedOn": ""
+    },
+    {
+      "id": 12,
+      "userId": 2,
+      "title": "My appointment",
+      "begin": "",
+      "end": "",
+      "details": "Any details.",
+      "changedOn": ""
+    },
+    {
+      "id": 13,
+      "userId": 3,
+      "title": "My appointment",
+      "begin": "",
+      "end": "",
+      "details": "Any details.",
+      "changedOn": ""
+    },
+    {
+      "id": 14,
+      "userId": 4,
+      "title": "My appointment",
+      "begin": "",
+      "end": "",
+      "details": "Any details.",
+      "changedOn": ""
+    },
+    {
+      "id": 15,
+      "userId": 5,
+      "title": "My appointment",
+      "begin": "",
+      "end": "",
+      "details": "Any details.",
+      "changedOn": ""
+    }
+  ]
+}

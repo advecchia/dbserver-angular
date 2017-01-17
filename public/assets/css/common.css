@@ -1,0 +1,31 @@
+.site {
+	
+}
+
+.site .md-fab {
+  color: #000 !important;
+  background-color: #fff !important;
+}
+.site .md-fab:hover, .site .md-fab.md-focused {
+  background-color: #f00 !important; 
+}
+
+.site .md-fab-top-right {
+  top: 16px; 
+}
+
+@media (max-device-width: 600px) {
+  .site .md-fab-top-right {
+    top: 9px;
+    right: 9px;
+  } 
+}
+
+.site md-fab-speed-dial {
+  margin-top: 0px; 
+}
+
+.site md-fab-speed-dial md-fab-trigger {
+    transition: all 0.3s ease-in-out;
+    transform: scale(1); 
+}

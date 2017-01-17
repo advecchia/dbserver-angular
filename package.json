@@ -1,0 +1,32 @@
+{
+  "name": "dbserver-angular",
+  "version": "1.0.0",
+  "description": "Esta ferramenta consiste na implementação de um sistema de CRUD para compromissos de usuários de uma determinada equipe de trabalho.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/advecchia/dbserver-angular.git"
+  },
+  "keywords": [
+    "crud",
+    "dbserver",
+    "agenda"
+  ],
+  "author": "advecchia",
+  "license": "Apache License 2.0",
+  "bugs": {
+    "url": "https://github.com/advecchia/dbserver-angular/issues"
+  },
+  "homepage": "https://github.com/advecchia/dbserver-angular#readme",
+  "dependencies": {
+    "font-awesome": "^4.7.0",
+    "json-server": "^0.9.4"
+  },
+  "devDependencies": {}
+}

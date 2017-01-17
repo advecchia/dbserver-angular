@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html ng-app='SiteApp'>
+  <head>
+    <title>Site</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel='shortcut icon' href='assets/img/favicon.png'>
+    <link rel='stylesheet' href='http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.css'>
+    <link rel='stylesheet' href='http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css'>
+    <link rel='stylesheet' type='text/css' href='assets/css/common.css'>
+    <link rel='stylesheet' type='text/css' href='assets/css/agenda.css'>
+  </head>
+
+  <body class='site' ng-controller='SiteController as sc'>
+    <md-content class="md-padding" layout="column">
+      <md-toolbar md-scroll-shrink layout="row">
+        <span>Agenda de: {{sc.selectedUser.name}}</span>
+        <span flex></span>
+        <md-input-container flex>
+          <label>Trocar usuário</label>
+          <md-select ng-model="sc.selectedUser">
+            <md-option ng-repeat="user in sc.users" ng-value="user" ng-disabled="user === sc.selectedUser">
+              {{user.name}}
+            </md-option>
+            <md-option ng-value="undefined" ng-disabled="undefined === sc.selectedUser"><em>Ver time</em></md-option>
+          </md-select>
+        </md-input-container>
+      </md-toolbar>
+      <span flex></span>
+      <md-fab-speed-dial ng-hide="sc.toolbar.hidden" md-direction="down" md-open="sc.toolbar.isOpen"
+          class="md-scale md-fab-top-right" ng-class="{ 'md-hover-full': sc.toolbar.hover }"
+          ng-mouseenter="sc.toolbar.isOpen=true" ng-mouseleave="sc.toolbar.isOpen=false">
+        <md-fab-trigger>
+          <md-button aria-label="Configurações" class="fa fa-cog md-fab">
+            <md-tooltip md-direction="left" md-visible="tooltipVisible">Configurações</md-tooltip>
+          </md-button>
+        </md-fab-trigger>
+    
+        <md-fab-actions>
+          <md-button title='Usuários' aria-hidden="true" aria-label="Usuários" 
+              class="fa fa-user md-fab md-raised md-mini" ng-click="sc.addUser($event)">
+            <md-tooltip md-direction="left" md-visible="tooltipVisible"
+                md-autohide="false">Usuários</md-tooltip>
+          </md-button>
+          <!-- <md-button title='Calendário' aria-hidden="true" aria-label="Calendário" 
+              class="fa fa-calendar md-fab md-raised md-mini" ng-click="sc.viewCalendar($event)">
+            <md-tooltip md-direction="left" md-visible="tooltipVisible"
+                md-autohide="false">Calendário</md-tooltip>
+          </md-button> -->
+        </md-fab-actions>
+      </md-fab-speed-dial>
+
+      <div>
+        <agenda></agenda>
+      </div>
+    
+    </md-content>
+    <br><br>
+    <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular.min.js'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-animate.min.js'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/angularjs/1.6.0/angular-aria.min.js'></script>
+    <script src='http://ajax.googleapis.com/ajax/libs/angular_material/1.1.1/angular-material.min.js'></script>
+
+    <script src='components/site/site.module.js'></script>
+    <script src='components/site/site.service.js'></script>
+    <script src='components/site/site.controller.js'></script>
+    <script src='components/agenda/agenda.directive.js'></script>
+    <script src='components/agenda/agenda.service.js'></script>
+  </body>
+</html>

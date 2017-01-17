@@ -1,0 +1,33 @@
+<md-dialog>
+  <form name="addUserForm" ng-submit="suc.addUser()" novalidate>
+	<md-toolbar>
+      <div class="md-toolbar-tools">
+	    <span>Adicionar usuário:</span>
+	    <span flex></span>
+	    <md-button class="fa fa-times md-icon-button" ng-click="suc.close()" aria-label="Cancelar"></md-button>
+	  </div>
+    </md-toolbar>
+
+    <md-dialog-content layout-padding>
+      <span flex></span>
+      <md-input-container>
+        <label>Nome</label>
+        <input name='userName' type='text' ng-model="suc.userName" md-maxlength="100" required>
+        <div ng-show="addUserForm.$submitted || addUserForm.userName.$touched">
+          <div ng-show="!suc.userName">Este campo é obrigatório.</div>
+        </div>
+      </md-input-container>
+    </md-dialog-content>
+
+    <md-dialog-actions>
+      <md-button type='button' aria-label="Cancelar" ng-click="suc.close()" class="md-primary">
+        Cancelar
+      </md-button>
+
+      <md-button type='submit' aria-label="Enviar" class="md-primary"
+          ng-disabled="addUserForm.$invalid">
+        Enviar
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
