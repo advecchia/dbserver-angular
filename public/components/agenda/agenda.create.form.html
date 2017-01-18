@@ -1,0 +1,73 @@
+<md-dialog class='create-appointment-dialog'>
+  <form name="addAppointmentForm" ng-submit="cac.addAppointment()" novalidate>
+  <md-toolbar>
+    <div class="md-toolbar-tools">
+      <span>Adicionar compromisso:</span>
+      <span flex></span>
+      <md-button class="fa fa-times md-icon-button" ng-click="cac.close()" title="Cancelar" aria-label="Cancelar"></md-button>
+    </div>
+  </md-toolbar>
+
+  <md-dialog-content layout='column' layout-padding>
+    <div class="md-dialog-content">
+      <md-input-container class="md-block">
+        <label>Título</label>
+        <input name='title' type='text' ng-model="cac.title" md-maxlength="200" required>
+        <div ng-show="addAppointmentForm.$submitted || addAppointmentForm.title.$touched">
+          <div ng-show="!cac.title">Este campo é obrigatório.</div>
+        </div>
+      </md-input-container>
+
+      <div layout='row'>
+        <md-input-container class="md-block padding-right">
+          <label>Data de início</label>
+          <md-datepicker name='dateBegin' ng-model="cac.dateBegin" required></md-datepicker>
+          <div ng-show="addAppointmentForm.$submitted || addAppointmentForm.dateBegin.$touched">
+            <div ng-show="!cac.dateBegin">Este campo é obrigatório.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Hora de início</label>
+          <input type="time" name="timeBegin" ng-model="cac.timeBegin" required/>
+          <div ng-show="addAppointmentForm.$submitted || addAppointmentForm.timeBegin.$touched">
+            <div ng-show="!cac.timeBegin">Este campo é obrigatório.</div>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div layout='row'>
+        <md-input-container class="md-block padding-right">
+          <label>Data de fim</label>
+          <md-datepicker name='dateEnd' ng-model="cac.dateEnd" required></md-datepicker>
+          <div ng-show="addAppointmentForm.$submitted || addAppointmentForm.dateEnd.$touched">
+            <div ng-show="!cac.dateEnd">Este campo é obrigatório.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+          <label>Hora de fim</label>
+          <input type="time" name="timeEnd" ng-model="cac.timeEnd" required/>
+          <div ng-show="addAppointmentForm.$submitted || addAppointmentForm.timeEnd.$touched">
+            <div ng-show="!cac.timeEnd">Este campo é obrigatório.</div>
+          </div>
+        </md-input-container>
+      </div>
+
+      <md-input-container class="md-block">
+        <label>Detalhes</label>
+        <textarea name='details' ng-model="cac.details" md-maxlength="400" rows="5" md-select-on-focus></textarea>
+      </md-input-container>
+    </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout='row'>
+      <md-button type='button' aria-label="Cancelar" ng-click="cac.close()" class="md-primary">
+        Cancelar
+      </md-button>
+
+      <md-button type='submit' aria-label="Enviar" class="md-primary"
+          ng-disabled="addAppointmentForm.$invalid">
+        Enviar
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

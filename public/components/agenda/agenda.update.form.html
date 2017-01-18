@@ -1,0 +1,73 @@
+<md-dialog class='update-appointment-dialog'>
+  <form name='updateAppointmentForm' ng-submit='uac.updateAppointment()' novalidate>
+  <md-toolbar>
+    <div class='md-toolbar-tools'>
+      <span>Editar compromisso:</span>
+      <span flex></span>
+      <md-button class='fa fa-times md-icon-button' ng-click='uac.close()' title='Cancelar' aria-label='Cancelar'></md-button>
+    </div>
+  </md-toolbar>
+
+  <md-dialog-content layout='column' layout-padding>
+    <div class='md-dialog-content'>
+      <md-input-container class='md-block'>
+        <label>Título</label>
+        <input name='title' type='text' ng-model='uac.title' md-maxlength='200' required>
+        <div ng-show='updateAppointmentForm.$submitted || updateAppointmentForm.title.$touched'>
+          <div ng-show='!uac.title'>Este campo é obrigatório.</div>
+        </div>
+      </md-input-container>
+
+      <div layout='row'>
+        <md-input-container class='md-block padding-right'>
+          <label>Data de início</label>
+          <md-datepicker name='dateBegin' ng-model='uac.dateBegin' required></md-datepicker>
+          <div ng-show='updateAppointmentForm.$submitted || updateAppointmentForm.dateBegin.$touched'>
+            <div ng-show='!uac.dateBegin'>Este campo é obrigatório.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class='md-block'>
+          <label>Hora de início</label>
+          <input type='time' name='timeBegin' ng-model='uac.timeBegin' required/>
+          <div ng-show='updateAppointmentForm.$submitted || updateAppointmentForm.timeBegin.$touched'>
+            <div ng-show='!uac.timeBegin'>Este campo é obrigatório.</div>
+          </div>
+        </md-input-container>
+      </div>
+
+      <div layout='row'>
+        <md-input-container class='md-block padding-right'>
+          <label>Data de fim</label>
+          <md-datepicker name='dateEnd' ng-model='uac.dateEnd' required></md-datepicker>
+          <div ng-show='updateAppointmentForm.$submitted || updateAppointmentForm.dateEnd.$touched'>
+            <div ng-show='!uac.dateEnd'>Este campo é obrigatório.</div>
+          </div>
+        </md-input-container>
+        <md-input-container class='md-block'>
+          <label>Hora de fim</label>
+          <input type='time' name='timeEnd' ng-model='uac.timeEnd' required/>
+          <div ng-show='updateAppointmentForm.$submitted || updateAppointmentForm.timeEnd.$touched'>
+            <div ng-show='!uac.timeEnd'>Este campo é obrigatório.</div>
+          </div>
+        </md-input-container>
+      </div>
+
+      <md-input-container class='md-block'>
+        <label>Detalhes</label>
+        <textarea name='details' ng-model='uac.details' md-maxlength='400' rows='5' md-select-on-focus></textarea>
+      </md-input-container>
+    </div>
+    </md-dialog-content>
+
+    <md-dialog-actions layout='row'>
+      <md-button type='button' aria-label='Cancelar' ng-click='uac.close()' class='md-primary'>
+        Cancelar
+      </md-button>
+
+      <md-button type='submit' aria-label='Enviar' class='md-primary'
+          ng-disabled='updateAppointmentForm.$invalid'>
+        Enviar
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>

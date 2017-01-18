@@ -1,0 +1,36 @@
+<div id='agenda' ng-cloak>
+  <div class='actions' layout='row'>
+    <h3>Compromissos pendentes: <span class='alert'>{{ ac.pendingCount() }}</span></h3>
+    <span flex></span>
+    <md-button class='md-primary md-raised' aria-label='Novo compromisso' ng-click='ac.createAppointment($event)'>Novo compromisso</md-button>
+  </div>
+  <div ng-repeat='day in ac.days' ng-cloak>
+    <md-toolbar layout='row' class='md-hue-2'>
+      <div class='md-toolbar-tools'>
+        <span>{{ day.label }}</span>
+      </div>
+    </md-toolbar>
+    <md-content>
+      <md-list flex>
+        <md-list-item class='md-3-line' ng-repeat='appointment in day.appointments'>
+          <div class='md-list-item-text appointment' layout='row'>
+            <div class='appointment-content' layout='column'>
+              <h3 class='appoitment-title'>{{ appointment.title }}</h3>
+              <h4>Inicia as {{ appointment.begin | date: 'HH:mm' }} de {{ appointment.begin | date:'dd/MM/yyyy' }}</h4>
+              <h4>Termina as {{ appointment.end | date: 'HH:mm' }} de {{ appointment.end | date:'dd/MM/yyyy' }}</h4>
+              <p class='details' ng-show='ac.show[appointment.id]'>
+                {{ appointment.details }}
+              </p>
+            </div>
+            <span flex></span>
+            <div class='' layout='row'>
+              <md-button class='fa fa-eye' title='Ver detalhes' aria-label='Ver detalhes' ng-click='ac.viewDetails(appointment.id)'></md-button>
+              <md-button class='fa fa-edit' title='Editar' aria-label='Editar' ng-click='ac.updateAppointment($event, appointment)'></md-button>
+              <md-button class='fa fa-times' title='Remover' aria-label='Remover' ng-click='ac.removeAppointment($event, appointment.id)'></md-button>
+            </div>
+          </div>
+        </md-list-item>
+      </md-list>
+    </md-content>
+  </div>
+</div>
